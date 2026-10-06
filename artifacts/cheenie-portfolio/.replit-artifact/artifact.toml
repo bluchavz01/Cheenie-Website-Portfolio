@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Cheenie Luchavez Portfolio"
+description = "A professional portfolio website for Cheenie Luchavez, a remote customer support, appointment setting, and virtual assistance professional with 9+ years of experience."
+version = "1.0.0"
+id = "artifacts/cheenie-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19344
+
+[services.development]
+run = "pnpm --filter @workspace/cheenie-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/cheenie-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/cheenie-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19344"
+BASE_PATH = "/"
