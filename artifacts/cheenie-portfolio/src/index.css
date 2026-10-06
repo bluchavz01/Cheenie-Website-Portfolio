@@ -195,6 +195,10 @@
 .role-card summary::-webkit-details-marker { display: none; }
 .role-card summary .chevron { transition: transform .25s ease; }
 .role-card[open] summary .chevron { transform: rotate(180deg); }
+.linkedin-experience-link { display: flex; width: fit-content; max-width: 100%; align-items: center; gap: 10px; border-top: 1px solid #d8dbce; padding: 18px 2px 4px; color: #4f623d; font-size: 13px; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+.linkedin-experience-link svg:first-child { flex: 0 0 auto; color: #0a66c2; }
+.linkedin-experience-link svg:last-child { flex: 0 0 auto; color: #837394; }
+.linkedin-experience-link:hover, .linkedin-experience-link:focus-visible { color: #725a88; text-decoration: underline; text-underline-offset: 4px; }
 .skill-chip { border: 1px solid rgba(106, 121, 82, .25); background: rgba(249, 248, 242, .76); transition: background .2s ease, transform .2s ease; }
 .skill-chip:hover { background: #e9eddd; transform: translateY(-2px); }
 .contact-panel { background: #4f623d; color: #f7f5ed; position: relative; overflow: hidden; }

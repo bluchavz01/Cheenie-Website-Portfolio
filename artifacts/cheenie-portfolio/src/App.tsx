@@ -76,19 +76,6 @@ const roles = [
     ],
   },
   {
-    date: 'SEP 2024 — PRESENT',
-    company: 'Filipino Homes / Rent.ph',
-    title: 'Property Endorser · Outbound Caller · Administrative Support',
-    place: 'Hybrid · Philippines',
-    summary:
-      'Helped move rental inquiries from first contact toward a viewing, combining property promotion with responsive client and admin support.',
-    bullets: [
-      'Promoted rental properties through calls, messages and online platforms.',
-      'Managed listings and social posts with property photos and videos.',
-      'Qualified inquiries, coordinated viewings, gathered tenant details and supported leasing documents.',
-    ],
-  },
-  {
     date: 'JAN 2025 — APR 2026',
     company: 'Amazon',
     title: 'Customer Service Associate',
@@ -353,7 +340,7 @@ function Experience() {
             Grounded in real work.
           </h2>
           <p className="mt-6 max-w-[320px] text-sm leading-[1.85] text-[#686770]">
-            From telecom and e-commerce to property and insurance, each role has added another perspective on how to support people well.
+            From telecom and e-commerce to insurance, each role has added another perspective on how to support people well.
           </p>
           <div className="mt-10 border-l-2 border-[#d7d9cd] pl-5">
             <span className="eyebrow">EDUCATION</span>
@@ -391,6 +378,17 @@ function Experience() {
               </details>
             </div>
           ))}
+          <a
+            className="linkedin-experience-link"
+            href="https://www.linkedin.com/in/cheenie-luchavez0002"
+            target="_blank"
+            rel="noreferrer"
+            data-testid="link-more-professional-experience"
+          >
+            <Linkedin size={18} aria-hidden="true" />
+            <span>More professional work experience</span>
+            <ArrowUpRight size={15} aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>
