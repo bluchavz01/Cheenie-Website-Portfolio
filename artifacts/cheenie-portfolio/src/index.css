@@ -200,6 +200,9 @@
 .contact-panel { background: #4f623d; color: #f7f5ed; position: relative; overflow: hidden; }
 .contact-panel::after { content: ''; position: absolute; width: 370px; height: 370px; right: -60px; top: -190px; border: 1px solid rgba(244, 241, 228, .2); border-radius: 50%; box-shadow: 0 0 0 38px rgba(244, 241, 228, .035), 0 0 0 78px rgba(244, 241, 228, .03); }
 .contact-panel > * { position: relative; z-index: 1; }
+.contact-link { display: inline-flex; min-width: 0; align-items: center; gap: 10px; color: #f7f5ed; font-size: 12px; line-height: 1.6; text-decoration: none; transition: color .2s ease; }
+.contact-link:hover, .contact-link:focus-visible { color: #d9dfc9; text-decoration: underline; text-underline-offset: 4px; }
+.contact-link span { overflow-wrap: anywhere; }
 .button-primary { display: inline-flex; align-items: center; gap: 12px; padding: 14px 21px; background: #f3efe2; color: #3f5030; text-decoration: none; border: 1px solid #f3efe2; transition: background .2s ease, transform .2s ease; }
 .button-primary:hover { background: #e3e7d4; transform: translateY(-2px); }
 .button-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 13px 18px; text-decoration: none; color: #4f623d; border: 1px solid rgba(79, 98, 61, .4); transition: background .2s ease, transform .2s ease; }

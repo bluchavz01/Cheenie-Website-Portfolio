@@ -5,7 +5,10 @@ import {
   ArrowUpRight,
   Check,
   ChevronDown,
+  Linkedin,
+  Mail,
   Menu,
+  Phone,
   X,
 } from 'lucide-react';
 import portraitPhoto from '@assets/f8c1b4c8-98fc-4f4c-b7b5-331eb5058ce9_1791289630624.jpg';
@@ -16,6 +19,7 @@ const navItems = [
   { label: 'What I do', href: '#services' },
   { label: 'Experience', href: '#experience' },
   { label: 'Approach', href: '#approach' },
+  { label: 'Tools', href: '#tools' },
 ];
 
 const services = [
@@ -124,6 +128,36 @@ const capabilityGroups = [
   {
     title: 'How I work',
     items: ['Clear communication', 'Active listening', 'Careful documentation', 'Empathy & patience', 'Adaptability', 'Confidentiality'],
+  },
+];
+
+const toolGroups = [
+  {
+    title: 'Productivity & collaboration',
+    items: [
+      'Google Workspace',
+      'Gmail',
+      'Google Calendar',
+      'Google Drive',
+      'Google Docs',
+      'Google Meet',
+      'Microsoft Office',
+      'Excel',
+      'OneNote',
+      'Outlook',
+      'Word',
+      'PowerPoint',
+      'Slack',
+      'Zoom',
+    ],
+  },
+  {
+    title: 'CRM & business platforms',
+    items: ['Salesforce', 'HubSpot', 'HighLevel', 'Agency Zoom', 'Ricochet360', 'BookingKoala', 'Calendly'],
+  },
+  {
+    title: 'Creative, social & AI',
+    items: ['Canva', 'CapCut', 'Pinterest', 'Social media', 'Grammarly', 'AI tools', 'ChatGPT'],
   },
 ];
 
@@ -400,13 +434,50 @@ function Capabilities() {
   );
 }
 
+function Tools() {
+  return (
+    <section id="tools" className="bg-[#f0efe7] py-20 md:py-24">
+      <div className="container-wide">
+        <SectionLabel>05 — Tools & platforms</SectionLabel>
+        <div className="grid gap-8 md:grid-cols-[.72fr_1.28fr]">
+          <div>
+            <h2 className="serif max-w-[390px] text-4xl leading-[1.12] tracking-[-.025em] text-[#35333d] md:text-[48px]">
+              Ready to work across your toolkit.
+            </h2>
+            <p className="mt-5 max-w-[360px] text-sm leading-[1.85] text-[#686770]">
+              Familiar with the everyday apps and business platforms that keep customer support, scheduling and content moving.
+            </p>
+          </div>
+          <div className="grid gap-7 sm:grid-cols-2">
+            {toolGroups.map((group, index) => (
+              <div key={group.title} className={`tool-group border-t border-[#cbd0c1] pt-5 ${index === 0 ? 'sm:col-span-2' : ''}`}>
+                <div className="mb-4 flex items-baseline justify-between">
+                  <h3 className="serif text-xl text-[#393741]">{group.title}</h3>
+                  <span className="font-mono text-[10px] text-[#837394]">0{index + 1}</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((tool) => (
+                    <span key={tool} className="skill-chip px-3 py-2 text-[12px] text-[#54535c]" data-testid={`chip-tool-${tool.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section id="contact" className="container-wide py-24 md:py-32">
       <div className="contact-panel px-7 py-12 md:px-14 md:py-16">
         <div className="grid gap-9 md:grid-cols-[1fr_auto] md:items-end">
           <div className="max-w-[660px]">
-            <SectionLabel>05 — Let’s work together</SectionLabel>
+            <SectionLabel>06 — Let’s work together</SectionLabel>
             <h2 className="serif text-[42px] leading-[1.08] tracking-[-.03em] md:text-[62px]">
               Need a steady hand<br className="hidden sm:block" /> in your corner?
             </h2>
@@ -414,14 +485,30 @@ function Contact() {
               If you’re looking for thoughtful customer support, organized admin help or a versatile virtual assistant, I’d be glad to hear what your team needs.
             </p>
           </div>
-            <a href="#contact-note" className="button-primary w-fit" data-testid="link-start-conversation">
+            <a href="#contact-details" className="button-primary w-fit" data-testid="link-start-conversation">
             Start a conversation <ArrowUpRight size={16} aria-hidden="true" />
           </a>
         </div>
-        <div id="contact-note" className="mt-10 max-w-[640px] border-t border-[#f1efe4]/25 pt-5">
-          <p className="text-[13px] leading-[1.8] text-[#e1e5d9]" data-testid="text-contact-note">
-            Please reach out using the contact details or platform where you found this portfolio. I haven’t listed direct contact details here, so you can connect with me through your existing introduction.
-          </p>
+        <div id="contact-details" className="mt-10 grid gap-4 border-t border-[#f1efe4]/25 pt-6 sm:grid-cols-3">
+          <a className="contact-link" href="tel:+639564854275" data-testid="link-contact-phone">
+            <Phone size={16} aria-hidden="true" />
+            <span>+63 956 485 4275</span>
+          </a>
+          <a className="contact-link" href="mailto:chine.luchavez@gmail.com" data-testid="link-contact-email">
+            <Mail size={16} aria-hidden="true" />
+            <span>chine.luchavez@gmail.com</span>
+          </a>
+          <a
+            className="contact-link"
+            href="https://www.linkedin.com/in/cheenie-luchavez0002"
+            target="_blank"
+            rel="noreferrer"
+            data-testid="link-contact-linkedin"
+          >
+            <Linkedin size={16} aria-hidden="true" />
+            <span>LinkedIn profile</span>
+            <ArrowUpRight size={13} aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>
@@ -451,6 +538,7 @@ function App() {
         <Services />
         <Experience />
         <Capabilities />
+        <Tools />
         <Contact />
       </div>
       <Footer />
