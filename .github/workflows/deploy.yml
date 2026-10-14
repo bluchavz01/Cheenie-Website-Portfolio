@@ -37,8 +37,8 @@ jobs:
         with:
           version: 9
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+- name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build portfolio
         run: pnpm --filter @workspace/cheenie-portfolio build
