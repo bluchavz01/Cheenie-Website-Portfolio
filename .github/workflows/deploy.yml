@@ -18,11 +18,6 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -37,14 +32,14 @@ jobs:
         with:
           version: 9
 
-- name: Install dependencies
+      - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
       - name: Build portfolio
         run: pnpm --filter @workspace/cheenie-portfolio build
         env:
-          PORT: 4173
-          BASE_PATH: /Cheenie-Website-Portfolio/
+          PORT: "4173"
+          BASE_PATH: "/Cheenie-Website-Portfolio/"
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -55,5 +50,4 @@ jobs:
           path: artifacts/cheenie-portfolio/dist/public
 
       - name: Publish website
-        id: deployment
         uses: actions/deploy-pages@v4
